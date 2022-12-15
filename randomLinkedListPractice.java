@@ -2,7 +2,7 @@ import javax.sound.sampled.Line;
 
 class LinkedList {
     Node head;
-    class Node{
+    class Node{   //Mandatory Node class
         int data;
         Node next;
         Node(int d){
@@ -18,10 +18,12 @@ class LinkedList {
     }
 
     public void insertAfter(Node prev_node, int new_data){
-        if (prev_node==null){
+        if (prev_node==null){ //If the previous node, after which we are providing new_node, is null, the process will be terminated
             System.out.println("previous node can't be null");
             return;
         }
+        
+        //if everything is okay, we will proceed the process
 
         Node new_node = new Node(new_data);
         new_node.next = prev_node.next;
@@ -29,22 +31,22 @@ class LinkedList {
 
     }
 
-    public void append(int new_data){
+    public void append(int new_data){ //Inserting a node at the end
 
 
         if (head==null){
-            head = new Node(new_data);
+            head = new Node(new_data);   //If the list is empty, the new_node will be head and process will end
             return;
         }
         Node new_node = new Node(new_data); //This can be written before the if statement as well, there will be no difference
         new_node.next = null;
 
-        Node last = head;
+        Node last = head; //start finding last node assuming the head as the last node, if not then the next one will be checked
         while (last.next!=null){
             last = last.next;
         }
         last.next = new_node;
-        return;
+        return;     //this return is unnecessary, I used it for different purpose
 
     }
 
