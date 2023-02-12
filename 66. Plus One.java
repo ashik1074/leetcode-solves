@@ -6,7 +6,7 @@ class Solution {
                 return digits;
             }
             else {
-                digits[i] = 0;
+                digits[i] = 0; //if there is a 9 in the array, make it 0 and loop again to check whether there are more 9 or not
             }
         }
         int [] finalArray = new int[digits.length+1];
