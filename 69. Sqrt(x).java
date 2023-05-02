@@ -1,3 +1,18 @@
+# Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
+
+# Approach
+<!-- Describe your approach to solving the problem. -->
+
+# Complexity
+- Time complexity:
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+
+- Space complexity:
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+
+# Code
+```
 class Solution {
     public int mySqrt(int x) {
        int low = 1, high = x;
@@ -6,18 +21,19 @@ class Solution {
         }
 
         while (low<=high) {
-            int mid = (low+high)/2;
-            if(x/mid==mid){
+            int mid = (low+high)/2;  
+            if(x/mid==mid){ //if mid*mid=x(3*3=9), then mid will be the sqrt(x)
                 return mid;
             }
-            else if(x/mid<mid){
+            else if(x/mid<mid){ //if (mid*mid)<x, then the sqrt(x) is lower than mid
                 high=mid-1;
             }
-            else if(x/mid>mid){
+            else if(x/mid>mid){ //if (mid*mid)<x, then the sqrt(x) is higher than mid
                 low=mid+1;
             }
             
         }
-        return high;
+        return high; //if none of those work than high will be the ans
     }
 }
+```
